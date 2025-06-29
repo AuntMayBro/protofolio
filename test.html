@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/test/navbar.css">
+    <link rel="stylesheet" href="/test/hero.css">
+    <link rel="stylesheet" href="/test/skills.css">
+    <link rel="stylesheet" href="/test/projects.css">
+    <link rel="stylesheet" href="/test/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>Test</title>
+</head>
+<body>
+    <!-- Loading the SVG definitions -->
+    <object type="image/svg+xml" data="icons.svg" style="display: none;"></object>
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <svg class="icon">
+                    <use href="#icon-logo"></use>
+                </svg>
+            </div>
+            <div class="menu-icons">
+                <svg class="icon" id="music-btn">
+                    <use href="#icon-hamburger"></use>  
+                </svg>
+                <svg class="icon">
+                    <use href="#icon-menu"></use>
+                </svg>
+            </div>
+        </div>
+        <div class="background-text">DEV</div>
+    </header>
+
+    <audio id="myAudio" src="/media/protfoliomusic.mp3" loop></audio>
+
+    <section class="hero">
+        <div class="hero-content-wrapper">
+            <div class="left-content">
+                <p class="intro">Hi, my name is</p>
+                <h1 class="myName">
+                    <span class="first-name">Aditya</span>
+                    <span class="middle-name">Singh</span>
+                    <span class="last-name">Bagri</span>
+                </h1>
+                <p class="subtitle">I build things for the web</p>
+                <div class="social-icons">
+                    <a href="#"><i data-lucide="mail"></i></a>
+                    <a href="#"><i data-lucide="linkedin"></i></a>
+                    <a href="#"><i data-lucide="github"></i></a>
+                    <a href="#"><i data-lucide="twitter"></i></a>
+                </div>
+
+                <div class="letsTalkButton-wrapper">
+                    <div class="letsTalkButton-glow"></div>
+                    <a href="#contact" class="letsTalkButton-main" title="Let's Talk">
+                        Let's Talk
+                        <svg viewBox="0 0 10 10" height="10" width="10" fill="none" class="arrow-icon">
+                            <path d="M0 5h7" class="arrow-line"></path>
+                            <path d="M1 1l4 4-4 4" class="arrow-head"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-illustration">
+                <dotlottie-player
+                    src="https://lottie.host/a7036561-21e3-4528-b03d-cf3a320dcd8b/vDsZD0BgsV.lottie"
+                    background="transparent"
+                    speed="1"
+                    style="width: 700px; height: 700px"
+                    loop
+                    autoplay
+                ></dotlottie-player>
+                <div class="abstract-background">
+                    <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice" style="width: 100%; height: 100%;">
+                        <path class="abstract-path" d="M 100 200 Q 300 50 500 200 T 900 600 Q 800 800 600 900 T 200 700 Q 50 500 100 200 Z"></path>
+                        <circle class="abstract-circle" cx="600" cy="200" r="10"></circle>
+                        <circle class="abstract-circle" cx="650" cy="220" r="5"></circle>
+                        <circle class="abstract-circle" cx="620" cy="280" r="7"></circle>
+                        <circle class="abstract-circle" cx="700" cy="350" r="12"></circle>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills-section">
+        <div class="skills-container">
+            <div class="skills-content">
+                <h1 class="skills-title">My Skills</h1>
+                <p class="skills-description">
+                    I take responsibility to craft aesthetic user experiences using modern frontend architecture.
+                </p>
+                <div class="skills-grid-wrapper">
+                    <div class="skills-category-group1">
+                        <div class="skills-category">
+                            <h2 class="category-title">Languages & Tools</h2>
+                            <div class="icons-grid">
+                                <img class="svg-icon" src="/icons/python.svg" alt="Python" loading="lazy" decoding="async">
+                                <img class="svg-icon" src="/icons/java.svg" alt="Java" loading="lazy" decoding="async">
+                                <img class="svg-icon" src="/icons/cpp.svg" alt="C++" loading="lazy" decoding="async">
+                                <img class="svg-icon" src="/icons/html.svg" alt="HTML5" loading="lazy" decoding="async">
+                                <img class="svg-icon" src="/icons/css.svg" alt="CSS3" loading="lazy" decoding="async">
+                                <img class="svg-icon" src="/icons/js.svg" alt="JavaScript" loading="lazy" decoding="async">
+                                <img class="svg-icon" src="/icons/git.svg" alt="Git" loading="lazy" decoding="async">
+                                <img class="svg-icon" src="/icons/postman.svg" alt="Postman" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                        <div class="skills-category">
+                            <h2 class="category-title">Libraries & Frameworks</h2>
+                            <div class="icons-grid">
+                                <img class="svg-icon" src="/icons/django.svg" alt="Django" loading="lazy" decoding="async">
+                                <img class="svg-icon" src="/icons/jinja.svg" alt="Jinja" loading="lazy" decoding="async">
+                                <img class="svg-icon" src="/icons/react.svg" alt="React" loading="lazy" decoding="async">
+                                <img class="svg-icon" src="/icons/tailwind.svg" alt="Tailwind CSS" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills-category-group2">
+                        <div class="skills-category">
+                            <h2 class="category-title">Databases</h2>
+                            <div class="icons-grid">
+                                <img class="svg-icon" src="/icons/mysql.svg" alt="MySQL" loading="lazy" decoding="async">
+                                <img class="svg-icon" src="/icons/sqlite.svg" alt="SQLite" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                        <div class="skills-category">
+                            <h2 class="category-title">Other</h2>
+                            <div class="icons-grid">
+                                <img class="svg-icon" src="/icons/github.svg" alt="GitHub" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="skills-illustration">
+                <dotlottie-player
+                    src="https://lottie.host/363502df-d05a-4802-a17c-05822df22247/laZvaC9Kml.lottie"
+                    background="transparent"
+                    speed="1"
+                    loop
+                    autoplay
+                ></dotlottie-player>
+            </div>
+        </div>
+        <div class="skills-background-text">OPS</div>
+    </section>
+
+    
+
+    <section class="my-projects-container">
+        <h2 class="my-projects-title">My Projects</h2>
+        <p class="my-projects-description">
+            Some things I've built with love, expertise and a pinch of magical ingredients.
+        </p>
+
+        <div class="project-cards-wrapper">
+            <div class="project-card-item">
+                <div class="project-card" id="pj-card-1">
+                    <div>
+                        <div class="glow"></div>
+                        <h3 class="card-title">My Protfolio</h3>
+                    </div>
+                    <div class="card-link-wrapper">
+                        <a href="#" class="card-link">View Project &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card-item">
+                <div class="project-card" id="pj-card-2">
+                    <div>
+                        <div class="glow"></div>
+                        <h3 class="card-title">Hostalite</h3>
+                    </div>
+                    <div class="card-link-wrapper">
+                        <a href="#" class="card-link">View Project &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card-item">
+                <div class="project-card" id="pj-card-3">
+                    <div>
+                        <div class="glow"></div>
+                        <h3 class="card-title">Rubix Cube Solver</h3>
+                    </div>
+                    <div class="card-link-wrapper">
+                        <a href="#" class="card-link">View Project &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card-item">
+                <div class="project-card" id="pj-card-4">
+                    <div>
+                        <div class="glow"></div>
+                        <h3 class="card-title">Gallery AI</h3>
+                    </div>
+                    <div class="card-link-wrapper">
+                        <a href="#" class="card-link">View Project &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card-item" id="project-card-item-5">
+                <div class="project-card" id="pj-card-5">
+                    <div>
+                        <div class="glow"></div>
+                        <h3 class="card-title">Happy Birthday</h3>
+                    </div>
+                    <div class="card-link-wrapper">
+                        <a href="#" class="card-link">View Project &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- <section class="interact-container">
+        <div class="contact-container" aria-labelledby="contact-heading">
+            <div class="section-header">
+            <h1 id="contact-heading">Get In Touch</h1>
+            <p>Have a question or a project in mind? Let's connect and build something remarkable together.</p>
+            </div>
+            <form aria-label="Contact Form">
+            <div class="form-group">
+                <input type="text" class="contact-input-name" placeholder="Your Name" aria-label="Your Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" class="contact-input-email" placeholder="Your Email" aria-label="Your Email" required>
+            </div>
+            <div class="form-group">
+                <textarea class="contact-textarea-message" placeholder="Your Message" aria-label="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">
+                Send Message
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M16.172 11L10.586 5.414 12 4l8 8-8 8-1.414-1.414L16.172 13H4v-2z"/>
+                </svg>
+            </button>
+            </form>
+            <div class="contact-footer">
+                <dotlottie-player
+                    src="https://lottie.host/c91070ed-1249-498f-b27a-2714af277661/r0OnVRyvgq.lottie"
+                    background="transparent"
+                    speed="1"
+                    style="width: 400px; height: 400px"
+                    loop
+                    autoplay
+                ></dotlottie-player>
+            </div>
+        </div>
+
+        <div class="showcase-container" aria-labelledby="skills-heading">
+            <div class="section-header">
+            <h2 id="skills-heading">My Expertise</h2>
+            <p>I offer a range of professional services tailored to your needs. Here is a glimpse of what I can deliver.</p>
+            </div>
+            <div class="skills-grid">
+            <div class="skill-item">
+                <div class="skill-icon"><i class="fas fa-code"></i></div>
+                <h3 class="skill-title">Web Development</h3>
+                <p class="skill-description">Building responsive, high-performance websites and web applications from scratch.</p>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon"><i class="fas fa-paint-brush"></i></div>
+                <h3 class="skill-title">UI/UX Design</h3>
+                <p class="skill-description">Crafting intuitive and aesthetically pleasing user interfaces that engage users.</p>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon"><i class="fas fa-server"></i></div>
+                <h3 class="skill-title">Backend Solutions</h3>
+                <p class="skill-description">Creating robust and scalable server-side architecture to power your applications.</p>
+            </div>
+            </div>
+        </div>
+    </section> -->
+
+
+
+    <script src="function.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+    <script
+        src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+        type="module"
+    ></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+.last-container{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    margin-bottom: 80px;
+}
+
+
+/* Main container for the contact form */
+.contact-container {
+    width: 100%;
+    max-width: 1500px; /* Max width for the form */
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    align-self: center;
+    justify-content: center;
+}
+
+/* Header section */
+.contact-header p {
+    font-size: 0.9rem;
+    color: #6c757d; /* Medium gray for subtitle */
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+}
+
+.contact-header h1 {
+    margin-top: 0.5rem;
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+    background: linear-gradient(90deg, var(--global-primary-color), var(--global-secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.contact-header .subtitle {
+    font-size: 1.25rem; /* "Get In Touch" subtitle */
+    color: #495057; /* Slightly darker gray */
+    margin-bottom: 2.5rem;
+}
+
+
+/* Form styling */
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    margin: 0 auto;
+
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+/* Input and Textarea base styles */
+.form-input {
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    border: 2px solid #ced4da; /* Lighter default border */
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #212529;
+    transition: all 0.3s ease;
+    /* -webkit-appearance: none; */
+}
+
+.form-input::placeholder {
+    color: transparent; /* Hide placeholder by default */
+}
+
+.form-label {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    padding: 0 0.25rem;
+    background-color: #ffffff;
+    color: #6c757d;
+    transition: all 0.2s ease;
+    pointer-events: none;
+}
+
+/* Floating label effect */
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+    top: -0.75rem;
+    left: 0.75rem;
+    font-size: 0.875rem;
+    color: #0d6efd; /* Blue accent color */
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #0d6efd; /* Blue accent color */
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
+}
+
+textarea.form-input {
+    resize: vertical; /* Allow vertical resize */
+    min-height: 120px;
+}
+
+/* Submit button styling */
+.submit-btn {
+    max-width: 124px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--global-primary-color);
+    border-radius: 0.5rem;
+    background: linear-gradient(90deg, var(--global-primary-color), var(--global-secondary-color));
+    color: #ffffff; /* White text */
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background-color: #0b5ed7; /* Darker blue on hover */
+    border-color: #0b5ed7;
+}
+
+.submit-btn .arrow {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.submit-btn:hover .arrow {
+    transform: translateX(4px);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 640px) {
+    body {
+        padding: 1rem;
+    }
+    .contact-container {
+        padding: 2rem;
+    }
+    .contact-header h1 {
+        font-size: 2.5rem;
+    }
+}

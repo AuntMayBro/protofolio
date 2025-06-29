@@ -1,0 +1,147 @@
+/* navbar.css */
+:root {
+    --navbar-highlight-purple: #A020F0;
+    --text-color-secondary: #b0b0b0;
+    --navbar-text-dark-bg: #333333;
+    --background-color-light: #ffffff;
+    --navbar-logo-color: rgb(0, 0, 0);
+    --navbar-icon-color-default: rgb(0, 0, 0);
+    --background-text-color-gray: gray;
+}
+
+*, *::before, *::after  {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color-light);
+  font-family: 'Space Grotesk', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------
+                        NAVBAR
+---------------------------------------------------------------------------------------------------------------------------------- */
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 50px 70px;
+  background: transparent;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-container {
+  max-width: 1400px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo svg {
+  color: var(--navbar-logo-color);
+  width: 30px;
+  height: 30px;
+  stroke-width: 2;
+}
+
+.menu-icons {
+  display: flex;
+  align-items: center;
+  gap: 44px;
+}
+
+.menu-icons svg {
+  color: var(--navbar-icon-color-default);
+  width: 30px;
+  height: 30px;
+  stroke-width: 2;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.menu-icons svg:hover {
+  color: var(--navbar-highlight-purple);
+}
+
+.background-text {
+    position: absolute;
+    right: -110px;
+    top: 200%;
+    transform: translateY(-50%) rotate(90deg);
+    font-size: 200px;
+    font-weight: 700;
+    color: var(--background-text-color-gray);
+    opacity: 0.35;
+    white-space: nowrap;
+    text-transform: uppercase;
+    pointer-events: none;
+    z-index: 1;
+    letter-spacing: 15px;
+}
+
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 30px 40px;
+    }
+    .background-text {
+        font-size: 150px;
+        right: -80px;
+        letter-spacing: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 30px 30px;
+    }
+
+    .logo svg, .menu-icons svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .logo-circle {
+        width: 10px;
+        height: 10px;
+    }
+
+    .background-text {
+        font-size: 100px;
+        right: -50px;
+        letter-spacing: 5px;
+        opacity: 0.1;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 30px 30px;
+    }
+
+    .background-text {
+        font-size: 100px;
+        right: -30px;
+    }
+}
+
+@keyframes rotate360 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.menu-icons svg.rotate {
+    animation: rotate360 1.5s linear infinite;
+}
