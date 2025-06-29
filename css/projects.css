@@ -96,7 +96,7 @@
     -webkit-overflow-scrolling: touch;
 
     display: flex;
-    overflow-x: hidden;
+    overflow-x: auto;
     gap: 2rem;
     padding-top: 3rem;
     padding-left: 7rem;
