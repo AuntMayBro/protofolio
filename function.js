@@ -12,14 +12,14 @@ fetch('icons.svg')
 
 const projectCardsWrapper = document.querySelector('.project-cards-wrapper');
 
-  if (projectCardsWrapper) {
-    projectCardsWrapper.addEventListener('wheel', (event) => {
-      event.preventDefault(); 
-      projectCardsWrapper.scrollLeft += event.deltaY;
-    });
-  } else {
-    console.error("Error: '.project-cards-wrapper' element not found. Horizontal scrolling will not work.");
-  }
+if (projectCardsWrapper) {
+  projectCardsWrapper.addEventListener('wheel', (event) => {
+    event.preventDefault();
+    projectCardsWrapper.scrollLeft += event.deltaY;
+  });
+} else {
+  console.error("Error: '.project-cards-wrapper' element not found. Horizontal scrolling will not work.");
+}
 
 
 // project card Function
@@ -73,35 +73,45 @@ cards.forEach(card => {
 });
 
 
-document.addEventListener('DOMContentLoaded', () => {
+// document.addEventListener('DOMContentLoaded', () => {
 
-  const musicButtonContainer = document.getElementById('music-btn');
-  const myAudio = document.getElementById('myAudio');
-  let isRotated = false;
+//   const musicButtonContainer = document.getElementById('music-btn');
+//   const myAudio = document.getElementById('myAudio');
+//   const equalizer = document.getElementsById('equalizer');
 
-  musicButtonContainer.addEventListener('click', function() {
-      if (isRotated) {
-          this.classList.remove('rotate');
-          this.style.transform = 'rotate(0deg)';
-      } else {
-          this.classList.add('rotate');
-      }
-      isRotated = !isRotated;
-  });
+//   musicButtonContainer.addEventListener('click', () => {
+//       if (myAudio.paused) {
+//           myAudio.play()
+//               .then(() => {
+//                   console.log("Music started playing!");
+//               })
+//               .catch(error => {
+//                   console.error("Error playing audio:", error);
+//                   alert("Autoplay was prevented by the browser. Please click again if music doesn't start.");
+//               });
+//       } else {
+//           myAudio.pause();
+//           console.log("Music paused!");
+//       }
+//   });
+// });
 
-  musicButtonContainer.addEventListener('click', () => {
-      if (myAudio.paused) {
-          myAudio.play()
-              .then(() => {
-                  console.log("Music started playing!");
-              })
-              .catch(error => {
-                  console.error("Error playing audio:", error);
-                  alert("Autoplay was prevented by the browser. Please click again if music doesn't start.");
-              });
-      } else {
-          myAudio.pause();
-          console.log("Music paused!");
-      }
-  });
+
+const myAudio = document.getElementById('myAudio');
+const equalizer = document.querySelector('.equalizer');
+
+equalizer.addEventListener('click', () => {
+  if (myAudio.paused) {
+    myAudio.play()
+      .then(() => {
+        equalizer.classList.add('playing');
+      })
+      .catch(error => {
+        console.error("Autoplay failed:", error);
+        alert("Autoplay prevented by browser. Please allow sound.");
+      });
+  } else {
+    myAudio.pause();
+    equalizer.classList.remove('playing');
+  }
 });

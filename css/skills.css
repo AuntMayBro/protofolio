@@ -1,9 +1,7 @@
-/* skills.css */
 /*
  * =============================================
  * --- ROOT & GENERAL STYLES ---
  * =============================================
- * Using custom properties for easy theme management and consistency.
  */
 :root {
     --global-primary-color: #7c3aed;

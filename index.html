@@ -14,7 +14,6 @@
     <title>Protfolio</title>
 </head>
 <body>
-    <!-- Loading the SVG definitions -->
     <object type="image/svg+xml" data="icons.svg" style="display: none;"></object>
     <header class="navbar">
         <div class="navbar-container">
@@ -24,9 +23,21 @@
                 </svg>
             </div>
             <div class="menu-icons">
-                <svg class="icon" id="music-btn">
-                    <use href="#icon-hamburger"></use>  
+                <svg class="icon equalizer" viewBox="0 0 30 30">
+                    <g class="equalizer-group">
+                        <rect class="bar" x="1.5" y="0" width="4" height="20" rx="1.5" fill="#F0D043" />
+                        <circle class="dot" cx="3.5" cy="24" r="2.5" fill="#E5594F" />
+                    </g>
+                    <g class="equalizer-group">
+                        <rect class="bar" x="10.5" y="7" width="4" height="13" rx="1.5" fill="#E5594F" />
+                        <circle class="dot" cx="12.5" cy="24" r="2.5" fill="#C45FA0" />
+                    </g>
+                    <g class="equalizer-group">
+                        <rect class="bar" x="19.5" y="5" width="4" height="15" rx="1.5" fill="#4A5699" />
+                        <circle class="dot" cx="21.5" cy="24" r="2.5" fill="#F39A2B" />
+                    </g>
                 </svg>
+
                 <svg class="icon">
                     <use href="#icon-menu"></use>
                 </svg>
@@ -225,33 +236,27 @@
 
     <section class="last-container">
         <div class="contact-container">
-            <!-- Page Header -->
             <div class="contact-header">
                 <h1>Contact</h1>
                 <p class="subtitle">Get In Touch.</p>
             </div>
 
-            <!-- Contact Form -->
             <form action="#" method="POST" class="contact-form">
-                <!-- Name Field -->
                 <div class="form-group">
                     <input type="text" id="name" name="name" class="form-input" placeholder="Name" required>
                     <label for="name" class="form-label">Name</label>
                 </div>
                 
-                <!-- Email Field -->
                 <div class="form-group">
                     <input type="email" id="email" name="email" class="form-input" placeholder="Email" required>
                     <label for="email" class="form-label">Email</label>
                 </div>
 
-                <!-- Message Field -->
                 <div class="form-group">
                     <textarea id="message" name="message" class="form-input" placeholder="Message" required></textarea>
                     <label for="message" class="form-label">Message</label>
                 </div>
                 
-                <!-- Submit Button -->
                 <button type="submit" class="submit-btn">
                     <span>Send</span>
                     <span class="arrow">&rarr;</span>
