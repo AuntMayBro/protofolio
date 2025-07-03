@@ -14,13 +14,18 @@
 
     /* Text Colors */
     --text-color-default: #4b5563;
-    --text-color-light: #ffffff; /* Used in contact and hero */
-    --text-color-secondary: #b0b0b0; /* Used in navbar and hero */
+    --text-color-light: #ffffff;
+    /* Used in contact and hero */
+    --text-color-secondary: #b0b0b0;
+    /* Used in navbar and hero */
 
     /* Shadow Colors (generalized from projects.css and contact.css) */
-    --shadow-color-light: rgba(0, 0, 0, 0.08); /* Using 0.08 from contact for light */
-    --shadow-color-medium: rgba(0, 0, 0, 0.4); /* From projects */
-    --shadow-color-dark: rgba(0, 0, 0, 0.25); /* Using 0.25 from contact for dark */
+    --shadow-color-light: rgba(0, 0, 0, 0.08);
+    /* Using 0.08 from contact for light */
+    --shadow-color-medium: rgba(0, 0, 0, 0.4);
+    /* From projects */
+    --shadow-color-dark: rgba(0, 0, 0, 0.25);
+    /* Using 0.25 from contact for dark */
 
     /* Navbar Specific */
     --navbar-highlight-purple: #A020F0;
@@ -31,7 +36,8 @@
     /* Hero Specific */
     --hero-intro-color: #9f7aea;
     --hero-subtitle-color: #d1d5db;
-    --hero-social-icon-color: var(--text-color-secondary); /* Refers to global text-color-secondary */
+    --hero-social-icon-color: var(--text-color-secondary);
+    /* Refers to global text-color-secondary */
     --hero-button-glow-gradient-start-1: #6366f1;
     --hero-button-glow-gradient-start-2: #ec4899;
     --hero-button-glow-gradient-end: #facc15;

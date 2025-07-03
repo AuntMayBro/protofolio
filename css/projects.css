@@ -114,38 +114,38 @@
 }
 
 .project-cards-wrapper::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .project-card-item {
-  flex-shrink: 0;
+    flex-shrink: 0;
 }
 
 .project-card {
-  width: 32rem;
-  height: 18rem;
-  max-width: 80vw;
+    width: 32rem;
+    height: 18rem;
+    max-width: 80vw;
 
-  border-radius: 1rem;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  color: var(--projects-card-text-color);
-  font-weight: bold;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    color: var(--projects-card-text-color);
+    font-weight: bold;
 
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-  box-shadow: 0 1px 5px var(--shadow-color-medium);
-  background-color: var(--background-color-light);
+    box-shadow: 0 1px 5px var(--shadow-color-medium);
+    background-color: var(--background-color-light);
 
-  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
-  transform-style: preserve-3d;
-  transform: perspective(1000px) rotate3d(0, 0, 0, 0);
-  position: relative;
-  cursor: pointer;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotate3d(0, 0, 0, 0);
+    position: relative;
+    cursor: pointer;
 }
 
 @media (max-width: 425px) {
@@ -156,56 +156,63 @@
     }
 }
 
-#pj-card-1{
-    background-image: url(/pj-images/protfolio.gif) ;
-    margin-left: 5rem;
+#pj-card-1 {
+    background-image: url(/pj-images/protfolio.gif);
+    margin-left: 2rem;
 }
 
-#pj-card-2{
-    background-image: url(/pj-images/hostel.gif) ;
+/* @media (min-width: 425px) {
+    .project-card-1 {
+        margin-left: 1rem;
+    }
+} */
+
+
+#pj-card-2 {
+    background-image: url(/pj-images/hostel.gif);
     background-size: cover;
 }
 
-#pj-card-3{
-    background-image: url(/pj-images/rubixcube.png) ;
+#pj-card-3 {
+    background-image: url(/pj-images/rubixcube.png);
     background-size: contain;
     background-repeat: no-repeat;
 }
 
-#pj-card-4{
-    background-image: url(/pj-images/Ai.gif) ;
+#pj-card-4 {
+    background-image: url(/pj-images/Ai.gif);
     background-size: contain;
     background-repeat: no-repeat;
 }
 
-#pj-card-5{
-    background-image: url(/pj-images/shinchan.gif) ;
+#pj-card-5 {
+    background-image: url(/pj-images/shinchan.gif);
     background-size: contain;
     background-repeat: no-repeat;
 }
 
 
-#project-card-item-5{
+#project-card-item-5 {
     padding-right: 20%;
 }
 
 
 .project-card:hover {
-  box-shadow: 0 20px 40px var(--shadow-color-dark);
+    box-shadow: 0 20px 40px var(--shadow-color-dark);
 }
 
 .project-card .glow {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  left: 0;
-  top: 0;
-  border-radius: inherit;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    border-radius: inherit;
 
-  background-image: radial-gradient(circle at 50% -20%, var(--projects-glow-color-light), var(--projects-glow-color-dark));
-  transition: background-image 0.2s ease-out;
-  z-index: 1;
+    background-image: radial-gradient(circle at 50% -20%, var(--projects-glow-color-light), var(--projects-glow-color-dark));
+    transition: background-image 0.2s ease-out;
+    z-index: 1;
 }
 
 

@@ -8,16 +8,18 @@
     --background-text-color-gray: gray;
 }
 
-*, *::before, *::after  {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background-color: var(--background-color-light);
-  font-family: 'Space Grotesk', sans-serif;
-  overflow-x: hidden;
+    background-color: var(--background-color-light);
+    font-family: 'Space Grotesk', sans-serif;
+    overflow-x: hidden;
 }
 
 /* ----------------------------------------------------------------------------------------------------------------------------------
@@ -25,49 +27,49 @@ body {
 ---------------------------------------------------------------------------------------------------------------------------------- */
 
 .navbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  padding: 50px 70px;
-  background: transparent;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding: 50px 70px;
+    background: transparent;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
 }
 
 .navbar-container {
-  max-width: 1400px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    max-width: 1400px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .logo svg {
-  color: var(--navbar-logo-color);
-  width: 30px;
-  height: 30px;
-  stroke-width: 2;
+    color: var(--navbar-logo-color);
+    width: 30px;
+    height: 30px;
+    stroke-width: 2;
 }
 
 .menu-icons {
-  display: flex;
-  align-items: center;
-  gap: 44px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
 }
 
 .menu-icons svg {
-  color: var(--navbar-icon-color-default);
-  width: 30px;
-  height: 30px;
-  stroke-width: 2;
-  cursor: pointer;
-  transition: color 0.3s ease;
+    color: var(--navbar-icon-color-default);
+    width: 30px;
+    height: 30px;
+    stroke-width: 2;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
 .menu-icons svg:hover {
-  color: var(--navbar-highlight-purple);
+    color: var(--navbar-highlight-purple);
 }
 
 .background-text {
@@ -90,6 +92,7 @@ body {
     .navbar {
         padding: 30px 40px;
     }
+
     .background-text {
         font-size: 150px;
         right: -80px;
@@ -102,7 +105,8 @@ body {
         padding: 30px 30px;
     }
 
-    .logo svg, .menu-icons svg {
+    .logo svg,
+    .menu-icons svg {
         width: 25px;
         height: 25px;
     }
@@ -154,10 +158,13 @@ body {
 }
 
 @keyframes bounceBar {
-    0%, 100% {
-    transform: scaleY(1);
+
+    0%,
+    100% {
+        transform: scaleY(1);
     }
+
     50% {
-    transform: scaleY(1.6);
+        transform: scaleY(1.6);
     }
 }

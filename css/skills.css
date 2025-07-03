@@ -153,7 +153,7 @@
         justify-content: space-between;
     }
 
-    .skills-category-group2 > .skills-category {
+    .skills-category-group2>.skills-category {
         flex: 1;
     }
 }

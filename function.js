@@ -22,7 +22,44 @@ if (projectCardsWrapper) {
 }
 
 
-// project card Function
+const texts = [
+  "I'm a Software Developer.",
+  "I build things for the Web",
+  "Innovating from idea to execution"
+];
+
+let index = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingSpeed = 100;
+const pauseTime = 1500;
+const element = document.getElementById("typewriter-text");
+
+function typeEffect() {
+  const currentText = texts[index];
+
+  if (isDeleting) {
+    charIndex--;
+    element.textContent = currentText.substring(0, charIndex);
+  } else {
+    charIndex++;
+    element.textContent = currentText.substring(0, charIndex);
+  }
+
+  if (!isDeleting && charIndex === currentText.length) {
+    isDeleting = true;
+    setTimeout(typeEffect, pauseTime);
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    index = (index + 1) % texts.length;
+    setTimeout(typeEffect, typingSpeed);
+  } else {
+    setTimeout(typeEffect, isDeleting ? typingSpeed / 2 : typingSpeed);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", typeEffect);
+
 const cards = document.querySelectorAll('.project-card');
 cards.forEach(card => {
   let bounds;
@@ -71,30 +108,6 @@ cards.forEach(card => {
     if (glow) glow.style.backgroundImage = '';
   });
 });
-
-
-// document.addEventListener('DOMContentLoaded', () => {
-
-//   const musicButtonContainer = document.getElementById('music-btn');
-//   const myAudio = document.getElementById('myAudio');
-//   const equalizer = document.getElementsById('equalizer');
-
-//   musicButtonContainer.addEventListener('click', () => {
-//       if (myAudio.paused) {
-//           myAudio.play()
-//               .then(() => {
-//                   console.log("Music started playing!");
-//               })
-//               .catch(error => {
-//                   console.error("Error playing audio:", error);
-//                   alert("Autoplay was prevented by the browser. Please click again if music doesn't start.");
-//               });
-//       } else {
-//           myAudio.pause();
-//           console.log("Music paused!");
-//       }
-//   });
-// });
 
 
 const myAudio = document.getElementById('myAudio');

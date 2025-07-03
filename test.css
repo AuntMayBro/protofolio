@@ -1,0 +1,297 @@
+
+:root {
+    /* Global Colors */
+    --global-primary-color: #7c3aed;
+    --global-secondary-color: #4f46e5;
+    --background-color-light: #ffffff;
+    --background-text-color-gray: gray;
+    --border-color-default: #e0e0e0;
+
+    /* Text Colors */
+    --text-color-default: #4b5563;
+    --text-color-light: #ffffff;
+    /* Used in contact and hero */
+    --text-color-secondary: #b0b0b0;
+    /* Used in navbar and hero */
+
+    /* Shadow Colors (generalized from projects.css and contact.css) */
+    --shadow-color-light: rgba(0, 0, 0, 0.08);
+    /* Using 0.08 from contact for light */
+    --shadow-color-medium: rgba(0, 0, 0, 0.4);
+    /* From projects */
+    --shadow-color-dark: rgba(0, 0, 0, 0.25);
+    /* Using 0.25 from contact for dark */
+
+    /* Navbar Specific */
+    --navbar-highlight-purple: #A020F0;
+    --navbar-text-dark-bg: #333333;
+    --navbar-logo-color: rgb(0, 0, 0);
+    --navbar-icon-color-default: rgb(0, 0, 0);
+
+    /* Hero Specific */
+    --hero-intro-color: #9f7aea;
+    --hero-subtitle-color: #d1d5db;
+    --hero-social-icon-color: var(--text-color-secondary);
+    /* Refers to global text-color-secondary */
+    --hero-button-glow-gradient-start-1: #6366f1;
+    --hero-button-glow-gradient-start-2: #ec4899;
+    --hero-button-glow-gradient-end: #facc15;
+    --hero-button-background-dark: #111827;
+    --hero-button-background-hover: #1f2937;
+    --hero-button-text-color: white;
+    --hero-arrow-color: white;
+    --hero-abstract-path-color: #8a2be2;
+    --hero-abstract-circle-color: #8a2be2;
+    --hero-button-shadow-color: rgba(75, 85, 99, 0.3);
+
+    /* Contact Specific */
+    --contact-main-purple: #6a0dad;
+    --contact-light-purple: #a765e6;
+    --contact-gold-accent: #ffc107;
+    --contact-text-color-dark: #1a1a1a;
+    --contact-background-color-dark: #2c2c54;
+    --contact-gradient-background: linear-gradient(135deg, #f0f4f8, #e6e9f0);
+
+    /* Projects Specific */
+    --projects-card-text-color: #181a1a;
+    --projects-card-title-color: #1f2937;
+    --projects-link-color-default: #000000;
+    --projects-link-color-hover: #ce0000;
+    --projects-glow-color-light: #ffffff22;
+    --projects-glow-color-dark: #0000000f;
+
+    /* Font & Spacing (from skills.css as they seem general) */
+    --font-primary: 'Space Grotesk', sans-serif;
+    --font-secondary: sans-serif;
+    --font-size-sm: clamp(0.75rem, 0.69rem + 0.28vw, 0.875rem);
+    --font-size-md: clamp(1.1rem, 0.98rem + 0.61vw, 1.5rem);
+    --font-size-xl: clamp(2.5rem, 1.79rem + 3.57vw, 5rem);
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+}
+
+
+
+:root {
+            --primary-bg:#7c3aed; 
+            --secondary-bg:  #4f46e5;
+            --text-color: #ffffff;
+            --button-color: #ffffff;
+            --button-bg: #7c3aed;
+            --button-border: #ffffff;
+            --road-color: #4a4a4a;
+            --building-light: #ffd700; 
+            --icon-color: #ffffff;
+            --footer-text-color: rgba(255, 255, 255, 0.7);
+        }
+
+.end {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, var(--global-primary-color) 0%, var(--global-secondary-color) 100%);
+    color: var(text-color-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100vh;
+    width: 100vw;
+    max-width: 100vw;
+
+    overflow-x: hidden;
+    position: absolute;
+}
+
+.header-illustration {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+     background: linear-gradient(135deg, var(--global-primary-color) 0%, var(--global-secondary-color) 100%);
+}
+
+/* Road */
+.road {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: var(--road-color);
+    z-index: 10;
+}
+
+.road-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: translateY(-50%);
+    z-index: 11;
+    animation: roadLineMovement 15s linear infinite;
+}
+
+@keyframes roadLineMovement {
+    from {
+        transform: translateX(0) translateY(-50%);
+    }
+
+    to {
+        transform: translateX(-100%) translateY(-50%);
+    }
+}
+
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: transparent;
+    z-index: 5;
+}
+
+/* Content section */
+.content-section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px;
+    text-align: center;
+    z-index: 20;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.social-icons {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.social-icons a {
+    color: var(--icon-color);
+    font-size: 2.2em;
+    transition: transform 0.2s ease-in-out;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.button {
+    padding: 15px 40px;
+    font-size: 1.2em;
+    background: linear-gradient(135deg, var(--global-primary-color) 0%, var(--global-secondary-color) 100%);
+    color: var(--button-color);
+    border: 2px solid var(--button-border);
+    border-radius: 7px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: var(--primary-bg);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+.footer-text {
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9em;
+    color: var(--footer-text-color);
+    margin-top: 0;
+    z-index: 20;
+}
+
+.footer-text .heart {
+    color: #ff69b4;
+}
+
+@media (max-width: 768px) {
+    .header-illustration {
+        height: 200px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .social-icons {
+        gap: 15px;
+    }
+
+    .social-icons a {
+        font-size: 1.8em;
+    }
+
+    .button {
+        padding: 12px 30px;
+        font-size: 1em;
+    }
+
+    .road {
+        height: 40px;
+    }
+
+    .road-line {
+        animation-duration: 10s;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-illustration {
+        height: 150px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .social-icons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .social-icons a {
+        font-size: 1.5em;
+    }
+
+    .button {
+        padding: 10px 25px;
+        font-size: 0.9em;
+    }
+
+    .road {
+        height: 30px;
+    }
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
