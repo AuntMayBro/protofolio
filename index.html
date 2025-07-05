@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="/css/skills.css">
     <link rel="stylesheet" href="/css/projects.css">
     <link rel="stylesheet" href="/css/contact.css">
+    <link rel="stylesheet" href="/css/menu-icon-ham.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <title>Protfolio</title>
+    <title>Portfolio</title>
 </head>
 
 <body>
@@ -41,17 +42,33 @@
                     </g>
                 </svg>
 
-                <svg class="icon">
-                    <use href="#icon-menu"></use>
-                </svg>
+                <div id="menuIcon" class="icon menu-bar-icon">
+                    <div class="menu-bar menu-bar-top"></div>
+                    <div class="menu-bar menu-bar-middle"></div>
+                    <div class="menu-bar menu-bar-bottom"></div>
+                </div>
+
+                <div id="menuPopup" class="menu-popup">
+                    <div class="popup-content">
+                        <ul>
+                            <li><a href="#hero-section">Home</a></li>
+                            <li><a href="#skills-section">Skills</a></li>
+                            <li><a href="#projects-section">Project</a></li>
+                            <li><a href="#contact-section">Connect</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <audio id="popupSound" src="/media/popup.mp3" preload="auto"></audio>
+
             </div>
         </div>
         <div class="background-text">DEV</div>
     </header>
-
+    
     <audio id="myAudio" src="/media/protfoliomusic.mp3" loop></audio>
 
-    <section class="hero">
+    <section class="hero" id="hero-section">
         <div class="hero-content-wrapper">
             <div class="left-content">
                 <p class="intro">Hi, my name is</p>
@@ -70,7 +87,7 @@
 
                 <div class="letsTalkButton-wrapper">
                     <div class="letsTalkButton-glow"></div>
-                    <a href="#contact" class="letsTalkButton-main" title="Let's Talk">
+                    <a href="#contact-section" class="letsTalkButton-main" title="Let's Talk">
                         Let's Talk
                         <svg viewBox="0 0 10 10" height="10" width="10" fill="none" class="arrow-icon">
                             <path d="M0 5h7" class="arrow-line"></path>
@@ -100,7 +117,7 @@
         </div>
     </section>
 
-    <section class="skills-section">
+    <section class="skills-section" id="skills-section">
         <div class="skills-container">
             <div class="skills-content">
                 <h1 class="skills-title">My Skills</h1>
@@ -167,9 +184,7 @@
         <div class="skills-background-text">OPS</div>
     </section>
 
-
-
-    <section class="my-projects-container">
+    <section class="my-projects-container" id="projects-section">
         <h2 class="my-projects-title">My Projects</h2>
         <p class="my-projects-description">
             Some things I've built with love, expertise and a pinch of magical ingredients.
@@ -181,7 +196,7 @@
             <div class="project-card" id="pj-card-1">
                 <div>
                     <div class="glow"></div>
-                    <h3 class="card-title">My Protfolio</h3>
+                    <h3 class="card-title">My Portfolio</h3>
                 </div>
                 <div class="card-link-wrapper">
                     <a href="#" class="card-link">View Project &rarr;</a>
@@ -238,9 +253,7 @@
         </div>
     </section>
 
-
-
-    <section class="last-container">
+    <section class="last-container" id="contact-section">
         <div class="contact-container">
             <div class="contact-header">
                 <h1>Contact</h1>
@@ -272,13 +285,7 @@
 
     </section>
 
-
-
-
-    <script src="function.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
+    <script src="functions.js"></script>
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 </body>
 

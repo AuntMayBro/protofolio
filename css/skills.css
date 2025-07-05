@@ -238,7 +238,7 @@
     font-family: var(--font-primary);
     position: absolute;
     top: 50%;
-    right: -100px;
+    right: -130px;
     transform: translateY(-50%) rotate(90deg);
     font-size: 200px;
     font-weight: 700;
