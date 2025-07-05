@@ -20,6 +20,10 @@ body {
     background-color: var(--background-color-light);
     font-family: 'Space Grotesk', sans-serif;
     overflow-x: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 /* ----------------------------------------------------------------------------------------------------------------------------------
