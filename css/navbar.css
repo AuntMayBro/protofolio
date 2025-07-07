@@ -26,6 +26,49 @@ body {
     -ms-user-select: none;
 }
 
+
+a,
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+.equalizer,
+#menuIcon,
+.project-card,
+.project-card a,
+.project-card button {
+    -webkit-tap-highlight-color: transparent;
+    -moz-tap-highlight-color: transparent;
+    outline: none;
+}
+
+a:focus,
+button:focus,
+input[type="button"]:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+.equalizer:focus,
+#menuIcon:focus,
+.project-card a:focus,
+.project-card button:focus {
+    outline: none;
+}
+
+
+/* Initial state: Hidden and slightly shifted */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(100px); /* Start slightly below its final position */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; 
+    will-change: opacity, transform; 
+}
+
+/* State when it becomes visible (added by JavaScript) */
+.reveal-item.revealed {
+    opacity: 1;
+    transform: translateY(0); /* Move to its final position */
+}
+
 /* ----------------------------------------------------------------------------------------------------------------------------------
                         NAVBAR
 ---------------------------------------------------------------------------------------------------------------------------------- */

@@ -1,12 +1,40 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // Audio element references
-    const popupSound = document.getElementById('popupSound'); 
-    const myAudio = document.getElementById('myAudio'); 
+    const popupSound = document.getElementById('popupSound'); // For menu and general link clicks
+    const myAudio = document.getElementById('myAudio'); // For the equalizer music
 
     // Lucide Icons initialization
     if (typeof lucide !== 'undefined' && lucide.createIcons) {
         lucide.createIcons();
+    }
+
+    // =====================================
+    // New: Scroll Reveal Animation
+    // =====================================
+
+    const revealElements = document.querySelectorAll('.reveal-item');
+    if (revealElements.length > 0) {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+        };
+
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        revealElements.forEach(element => {
+            observer.observe(element);
+        });
     }
 
     // Fetching icons.svg
@@ -51,19 +79,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hamburger Icon Animation & Popup Logic
     const menuIcon = document.getElementById('menuIcon');
     const menuPopup = document.getElementById('menuPopup');
-
     // Get all navigation links within the popup
     const popupNavLinks = menuPopup ? menuPopup.querySelectorAll('ul li a') : [];
 
     if (menuIcon && menuPopup && popupSound) {
         menuIcon.addEventListener('click', () => {
-            menuIcon.classList.toggle('open');
-            menuPopup.classList.toggle('open');
 
             popupSound.currentTime = 0;
             popupSound.play().catch(error => {
                 console.error("Popup sound play failed:", error);
             });
+
+            menuIcon.classList.toggle('open');
+            menuPopup.classList.toggle('open');
+
+            // --- IMPORTANT: Toggle no-scroll class on body ---
+            document.body.classList.toggle('no-scroll');
         });
 
         // Close popup if clicked anywhere outside content
@@ -71,6 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (event.target === menuPopup) {
                 menuIcon.classList.remove('open');
                 menuPopup.classList.remove('open');
+                // --- IMPORTANT: Remove no-scroll class when closing ---
+                document.body.classList.remove('no-scroll');
             }
         });
     } else {
@@ -87,13 +120,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 const targetSection = document.querySelector(targetId);
 
                 if (targetSection) {
-                    menuIcon.classList.remove('open');
-                    menuPopup.classList.remove('open');
 
                     if (popupSound) {
                         popupSound.currentTime = 0;
                         popupSound.play().catch(error => console.error("Popup link click sound play failed:", error));
                     }
+
+                    menuIcon.classList.remove('open');
+                    menuPopup.classList.remove('open');
+                    document.body.classList.remove('no-scroll');
 
                     targetSection.scrollIntoView({
                         behavior: 'smooth'
@@ -111,8 +146,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (popupSound && allLinks.length > 0) {
         allLinks.forEach(link => {
+            // Exclude links already handled: menuIcon and any link within the equalizer
             if (link !== menuIcon && link.closest('.equalizer') === null) {
                 link.addEventListener('click', (event) => {
+                    // Prevent default for internal anchor links to allow sound to play before scroll
                     if (link.getAttribute('href') && link.getAttribute('href').startsWith('#')) {
                         event.preventDefault();
                     }
@@ -127,9 +164,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         const targetId = link.getAttribute('href');
                         const targetSection = document.querySelector(targetId);
                         if (targetSection) {
+                            // Close menu if an internal link is clicked (e.g., from outside the popup)
                             if (menuIcon && menuPopup) {
                                 menuIcon.classList.remove('open');
                                 menuPopup.classList.remove('open');
+                                // --- IMPORTANT: Remove no-scroll class when closing via internal link click ---
+                                document.body.classList.remove('no-scroll');
                             }
                             targetSection.scrollIntoView({
                                 behavior: 'smooth'
@@ -175,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 index = (index + 1) % texts.length;
                 setTimeout(typeEffect, typingSpeed);
             } else {
-                setTimeout(typeEffect, isDeleting ? typingSpeed / 3 : typingSpeed);
+                setTimeout(typeEffect, isDeleting ? typingSpeed / 2 : typingSpeed);
             }
         }
         typeEffect();
@@ -242,5 +282,71 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+
+    //scrolltext effect 
+        const topText = document.getElementById("topText");
+    const bottomText = document.getElementById("bottomText");
+
+    let topOffset = 0;
+    let bottomOffset = 0;
+    let scrollVelocity = 0;
+    const baseSpeed = 0.6;
+
+    window.addEventListener('DOMContentLoaded', () => {
+        bottomOffset = -bottomText.offsetWidth / 2;
+        bottomText.style.transform = `translateX(${bottomOffset}px)`;
+    });
+
+    function animate() {
+        topOffset -= scrollVelocity * baseSpeed;
+        bottomOffset += scrollVelocity * baseSpeed;
+
+        const topWidth = topText.offsetWidth / 2;
+        const bottomWidth = bottomText.offsetWidth / 2;
+
+        if (topOffset < -topWidth) {
+            topOffset += topWidth;
+        }
+
+        if (topOffset > 0) {
+            topOffset -= topWidth;
+        }
+
+        if (bottomOffset > 0) { 
+            bottomOffset -= bottomWidth;
+        }
+        if (bottomOffset < -bottomWidth) {
+            bottomOffset += bottomWidth;
+        }
+
+
+        topText.style.transform = `translateX(${topOffset}px)`;
+        bottomText.style.transform = `translateX(${bottomOffset}px)`;
+
+        scrollVelocity *= 0.9;
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    window.addEventListener("wheel", (e) => {
+        scrollVelocity += e.deltaY * 0.1; 
+    });
+
+
+    let touchStartY = 0;
+
+    window.addEventListener("touchstart", (e) => {
+        touchStartY = e.touches[0].clientY;
+    });
+
+    window.addEventListener("touchmove", (e) => {
+        const touchEndY = e.touches[0].clientY;
+        const deltaY = touchStartY - touchEndY;
+        scrollVelocity += deltaY * 0.4;
+        touchStartY = touchEndY;
+    });
 
 }); // End of DOMContentLoaded
