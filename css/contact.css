@@ -150,10 +150,6 @@ textarea.form-input {
 }
 
 @media (max-width: 640px) {
-    body {
-        padding: 1rem;
-    }
-
     .contact-container {
         padding: 2rem;
     }
