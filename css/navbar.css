@@ -69,6 +69,11 @@ input[type="reset"]:focus,
     transform: translateY(0); /* Move to its final position */
 }
 
+
+
+
+
+
 /* ----------------------------------------------------------------------------------------------------------------------------------
                         NAVBAR
 ---------------------------------------------------------------------------------------------------------------------------------- */
@@ -142,7 +147,7 @@ input[type="reset"]:focus,
 
     .background-text {
         font-size: 150px;
-        right: -80px;
+        right: -93px;
         letter-spacing: 10px;
     }
 }
@@ -165,7 +170,7 @@ input[type="reset"]:focus,
 
     .background-text {
         font-size: 100px;
-        right: -50px;
+        right: -48px;
         letter-spacing: 5px;
         opacity: 0.1;
     }
@@ -179,7 +184,7 @@ input[type="reset"]:focus,
 
     .background-text {
         font-size: 100px;
-        right: -30px;
+        right: -57px;
     }
 }
 

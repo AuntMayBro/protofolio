@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/css/contact.css">
     <link rel="stylesheet" href="/css/menu-icon-ham.css">
     <link rel="stylesheet" href="/css/interested.css">
+    <link rel="stylesheet" href="/css/cursor.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
@@ -19,6 +20,19 @@
 </head>
 
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/loaders/GLTFLoader.js"></script>
+
+    <svg style="position:absolute; width:0; height:0; visibility: hidden;">
+        <defs>
+            <filter id="gooey-filter">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="gooey" />
+                <feComposite in="SourceGraphic" in2="gooey" operator="atop"/>
+            </filter>
+        </defs>
+    </svg>
+
     <object type="image/svg+xml" data="icons.svg" style="display: none;"></object>
     <header class="navbar">
         <div class="navbar-container">
@@ -154,6 +168,8 @@
                                     decoding="async">
                                 <img class="svg-icon" src="/icons/tailwind.svg" alt="Tailwind CSS" loading="lazy"
                                     decoding="async">
+                                <img class="svg-icon" src="/icons/threejs.svg" alt="Tailwind CSS" loading="lazy"
+                                    decoding="async">
                             </div>
                         </div>
                     </div>
@@ -245,7 +261,7 @@
             <div class="project-card" id="pj-card-5">
                 <div>
                     <div class="glow"></div>
-                    <h3 class="card-title">Happy Birthday</h3>
+                    <h3 class="card-title">Project Sinchan</h3>
                 </div>
                 <div class="card-link-wrapper">
                     <a href="#" class="card-link">View Project &rarr;</a>
@@ -310,6 +326,7 @@
     </section>
 
     <script src="functions.js"></script>
+    <script src="cursor.js"></script>
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 </body>
 </html>

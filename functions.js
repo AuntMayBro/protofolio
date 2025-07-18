@@ -1,5 +1,74 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    if ('ontouchstart' in window || navigator.maxTouchPoints) {
+        return;
+    }
+
+    const cursorRing = document.createElement('div');
+    cursorRing.classList.add('custom-cursor-ring');
+    document.body.appendChild(cursorRing);
+
+    const cursorDot = document.createElement('div');
+    cursorDot.classList.add('custom-cursor-dot');
+    document.body.appendChild(cursorDot);
+
+    let mouseX = 0;
+    let mouseY = 0;
+    let ringX = 0;
+    let ringY = 0;
+    const speed = 0.1;
+
+    cursorRing.style.opacity = '1';
+    cursorDot.style.opacity = '1';
+
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    const animate = () => {
+        cursorDot.style.left = `${mouseX}px`;
+        cursorDot.style.top = `${mouseY}px`;
+
+        ringX += (mouseX - ringX) * speed;
+        ringY += (mouseY - ringY) * speed;
+        cursorRing.style.left = `${ringX}px`;
+        cursorRing.style.top = `${ringY}px`;
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    const interactiveElements = document.querySelectorAll(
+        'a, button, .project-card, .menu-bar-icon, .equalizer, .letsTalkButton-main, .svg-icon, .submit-btn'
+    );
+
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursorRing.classList.add('hover');
+            cursorDot.classList.add('hover');
+        });
+        el.addEventListener('mouseleave', () => {
+            cursorRing.classList.remove('hover');
+            cursorDot.classList.remove('hover');
+        });
+    });
+
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+
     // Audio element references
     const popupSound = document.getElementById('popupSound'); // For menu and general link clicks
     const myAudio = document.getElementById('myAudio'); // For the equalizer music
@@ -283,9 +352,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // const projectCardsWrapper = document.querySelector('.project-cards-wrapper');
+    if (projectCardsWrapper) {
+        projectCardsWrapper.addEventListener('scroll', () => {
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                const cardLeft = card.getBoundingClientRect().left;
+                const screenWidth = window.innerWidth;
+                if (cardLeft < screenWidth * 0.8 && cardLeft > 0) {
+                    card.style.transform = 'scale(1)';
+                    card.style.opacity = '1';
+                } else {
+                    card.style.transform = 'scale(0.9)';
+                    card.style.opacity = '0.7';
+                }
+            });
+        });
+    }
+
 
     //scrolltext effect 
-        const topText = document.getElementById("topText");
+    const topText = document.getElementById("topText");
     const bottomText = document.getElementById("bottomText");
 
     let topOffset = 0;
@@ -313,7 +400,7 @@ document.addEventListener('DOMContentLoaded', () => {
             topOffset -= topWidth;
         }
 
-        if (bottomOffset > 0) { 
+        if (bottomOffset > 0) {
             bottomOffset -= bottomWidth;
         }
         if (bottomOffset < -bottomWidth) {
@@ -332,7 +419,7 @@ document.addEventListener('DOMContentLoaded', () => {
     animate();
 
     window.addEventListener("wheel", (e) => {
-        scrollVelocity += e.deltaY * 0.1; 
+        scrollVelocity += e.deltaY * 0.1;
     });
 
 
@@ -348,5 +435,22 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollVelocity += deltaY * 0.4;
         touchStartY = touchEndY;
     });
+
+
+    // Contact Form Button
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault(); 
+            const submitBtn = contactForm.querySelector('.submit-btn');
+            submitBtn.textContent = 'Sending...';
+            
+            // Changed the timeout from 2000ms to 5000ms
+            setTimeout(() => {
+                submitBtn.innerHTML = '<span>Sent!</span><span class="arrow">&check;</span>';
+                contactForm.reset();
+            }, 900); // 5000 milliseconds = 5 seconds
+        });
+    }
 
 }); // End of DOMContentLoaded

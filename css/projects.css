@@ -141,11 +141,12 @@
     box-shadow: 0 1px 5px var(--shadow-color-medium);
     background-color: var(--background-color-light);
 
-    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    transition: transform 0.4s ease-out, box-shadow 0.2s ease-out;
     transform-style: preserve-3d;
-    transform: perspective(1000px) rotate3d(0, 0, 0, 0);
+    transform: scale(0.9) perspective(1000px) rotate3d(0, 0, 0, 0);
     position: relative;
     cursor: pointer;
+    
 }
 
 @media (max-width: 425px) {
