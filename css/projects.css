@@ -170,7 +170,7 @@
 
 #pj-card-2 {
     background-image: url(/pj-images/FrontPage.png);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
