@@ -168,26 +168,26 @@
     }
 } */
 
-
 #pj-card-2 {
+    background-image: url(/pj-images/FrontPage.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+#pj-card-3 {
     background-image: url(/pj-images/hostel.gif);
     background-size: cover;
 }
 
-#pj-card-3 {
+#pj-card-4 {
     background-image: url(/pj-images/rubixcube.png);
     background-size: contain;
     background-repeat: no-repeat;
 }
 
-#pj-card-4 {
-    background-image: url(/pj-images/Ai.gif);
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
 #pj-card-5 {
-    background-image: url(/pj-images/shinchan.gif);
+    background-image: url(/pj-images/Ai.gif);
     background-size: contain;
     background-repeat: no-repeat;
 }

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    if ('ontouchstart' in window || navigator.maxTouchPoints) {
+    if (window.innerWidth <= 768) {
         return;
     }
 
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let mouseY = 0;
     let ringX = 0;
     let ringY = 0;
-    const speed = 0.1;
+    const speed = 0.1; 
 
     cursorRing.style.opacity = '1';
     cursorDot.style.opacity = '1';
