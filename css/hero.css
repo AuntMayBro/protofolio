@@ -114,16 +114,17 @@
     margin-bottom: 40px;
 }
 
-.social-icons svg {
+.social-icons svg, .social-icons i {
     width: 28px;
     height: 28px;
+    font-size: 28px;
     color: var(--hero-social-icon-color);
     transition: color 0.3s ease;
     stroke-width: 2;
 }
 
 
-.social-icons a:hover svg {
+.social-icons a:hover svg, .social-icons a:hover i {
     color: var(--navbar-highlight-purple);
     animation: shake 0.5s;
 }

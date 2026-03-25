@@ -94,14 +94,14 @@
                 </h1>
                 <p class="subtitle"><span id="typewriter-text"></span><span class="cursor">|</span></p>
                 <div class="social-icons reveal-item">
-                    <a href="mailto:bagriaditya00@gmail.com"><i data-lucide="mail"></i></a>
+                    <a href="mailto:bagriaditya00@gmail.com"><i class="fas fa-envelope"></i></a>
                     <a href="https://www.linkedin.com/in/aditya-singh-bagri00a0088" target="_blank" rel="noopener noreferrer">
-                        <i data-lucide="linkedin"></i>
+                        <i class="fab fa-linkedin"></i>
                     </a>
                     <a href="https://github.com/AuntMayBro" target="_blank" rel="noopener noreferrer">
-                        <i data-lucide="github"></i>
+                        <i class="fab fa-github"></i>
                     </a>
-                    <!-- <a href="#"><i data-lucide="twitter"></i></a> -->
+                    <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
                 </div>
 
                 <div class="letsTalkButton-wrapper reveal-item">
@@ -317,7 +317,10 @@
                 <p class="subtitle">Get In Touch.</p>
             </div>
 
-            <form action="#" method="POST" class="contact-form">
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="contactForm">
+                <input type="hidden" name="access_key" value="09bb7aa0-d078-4d81-af60-8a9405cac382">
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                
                 <div class="form-group">
                     <input type="text" id="name" name="name" class="form-input" placeholder="Name" required>
                     <label for="name" class="form-label">Name</label>
@@ -340,6 +343,10 @@
             </form>
         </div>
     </section>
+
+    <footer class="portfolio-footer" style="text-align: center; padding: 2rem; color: var(--text-color-secondary); font-family: 'Space Grotesk', sans-serif; font-size: 0.9rem; border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 2rem;">
+        <p>&copy; 2025 AuntMayBro. Built with ❤️</p>
+    </footer>
 
     <script src="functions.js"></script>
     <script src="cursor.js"></script>
